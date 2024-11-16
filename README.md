@@ -41,7 +41,7 @@ Acesse o projeto no navegador em http://127.0.0.1:8000/
 
 guilherme maciel: tech lead
 gabriel guady: desenvolvedor da ORD-002
-joao borges: desenvolvedor da ORD-003 parte de templates
+joao borges: desenvolvedor da ORD-003 parte de templates com css.
 gabriel coelho: desenvolvedor da ORD-003 parte de url, view e form
 
 
