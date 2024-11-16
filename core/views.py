@@ -22,3 +22,17 @@ def cliente_form(request, id=None):
 from django.shortcuts import render
 
 # Create your views here.
+def produto_list(request):
+    produtos = Produto.objects.all()
+    return render(request, 'produtos.html', {'produtos': produtos})
+
+def produto_form(request, id=None):
+    produto = Produto.objects.get(id=id) if id else None
+    if request.method == 'POST':
+        form = ProdutoForm(request.POST, instance=produto)
+        if form.is_valid():
+            form.save()
+            return redirect('produto_list')
+    else:
+        form = ProdutoForm(instance=produto)
+    return render(request, 'produto_form.html', {'form': form})
