@@ -36,3 +36,20 @@ def produto_form(request, id=None):
     else:
         form = ProdutoForm(instance=produto)
     return render(request, 'produto_form.html', {'form': form})
+
+
+# Create your views here.
+def venda_list(request):
+    venda = Venda.objects.all()
+    return render(request, 'vendas.html', {'vendas': venda})
+
+def venda_form(request, id=None):
+    venda = Produto.objects.get(id=id) if id else None
+    if request.method == 'POST':
+        form = VendaForm(request.POST, instance=venda)
+        if form.is_valid():
+            form.save()
+            return redirect('vendas_list')
+    else:
+        form = VendaForm(instance=venda)
+    return render(request, 'vendas_form.html', {'form': form})

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vendas</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            color: #333;
+        }
+        a {
+            text-decoration: none;
+            color: #007bff;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .container {
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        .vendas-list {
+            list-style-type: none;
+            padding: 0;
+        }
+        .vendas-item {
+            padding: 10px;
+            border-bottom: 1px solid #eee;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Vendas</h1>
+        <a href="{% url 'vendas_create' %}"><i class="fas fa-plus"></i> Nova Venda</a>
+        <ul class="vendas-list">
+            {% for venda in vendas %}
+                <li class="vendas-item">
+                    {{ venda }} -
+                    <a href="{% url 'vendas_update' venda.id %}"><i class="fas fa-edit"></i> Editar</a>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+</body>
+</html>
