@@ -1,7 +1,55 @@
-<h1>Clientes</h1>
-<a href="{% url 'cliente_create' %}">Novo Cliente</a>
-<ul>
-    {% for cliente in clientes %}
-        <li>{{ cliente.nome }} - <a href="{% url 'cliente_update' cliente.id %}">Editar</a></li>
-    {% endfor %}
-</ul>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clientes</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            color: #333;
+        }
+        a {
+            text-decoration: none;
+            color: #007bff;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .container {
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        .client-list {
+            list-style-type: none;
+            padding: 0;
+        }
+        .client-item {
+            padding: 10px;
+            border-bottom: 1px solid #eee;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Clientes</h1>
+        <a href="{% url 'cliente_create' %}"><i class="fas fa-plus"></i> Novo Cliente</a>
+        <ul class="client-list">
+            {% for cliente in clientes %}
+                <li class="client-item">
+                    {{ cliente.nome }} -
+                    <a href="{% url 'cliente_update' cliente.id %}"><i class="fas fa-edit"></i> Editar</a>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+</body>
+</html>
