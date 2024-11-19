@@ -44,6 +44,7 @@ gabriel guady: desenvolvedor da ORD-002
 joao borges: desenvolvedor da ORD-003 parte de templates com css.
 gabriel coelho: desenvolvedor da ORD-003 parte de url, view e form
 
+projeto final concluido.
 
 
 
